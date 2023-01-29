@@ -27,7 +27,8 @@ class TMA(ABC):
 		plt.figure()
 
 	def Gen(self):
-		for i in tqdm(range(self.DIM)):
+		pbar=tqdm(range(self.DIM))
+		for i in pbar:
 			row = []
 			for j in range(self.DIM):
 				#print(i, j)
@@ -37,6 +38,7 @@ class TMA(ABC):
 				c = (r, g, b)
 				#print(c)
 				row.append(c)
+				pbar.set_description(f"Now Calculating {str(i).rjust(4)},{str(j).rjust(4)} ")
 			self.data.append(row)
 		# del(row)
 		self._pixel_write()
