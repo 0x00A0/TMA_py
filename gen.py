@@ -16,7 +16,7 @@ import random
 from tqdm import tqdm
 from abc import abstractclassmethod, abstractmethod, abstractproperty, ABC
 import sys
-sys.setrecursionlimit(3000)
+sys.setrecursionlimit(8192)
 
 class TMA(ABC):
 
@@ -38,22 +38,22 @@ class TMA(ABC):
 				c = (r, g, b)
 				#print(c)
 				row.append(c)
-				pbar.set_description(f"Now Calculating {str(i).rjust(4)},{str(j).rjust(4)} ")
+			#pbar.set_description(f"Now Calculating {str(i).rjust(4)},{str(j).rjust(4)} ")
 			self.data.append(row)
 		# del(row)
 		self._pixel_write()
 		plt.close()
 
 	@abstractmethod
-	def RD(self, i: int, j: int, DIM: int):
+	def RD(self, i, j, DIM: int):
 		pass
 
 	@abstractmethod
-	def GR(self, i: int, j: int, DIM: int):
+	def GR(self, i, j, DIM: int):
 		pass
 
 	@abstractmethod
-	def BL(self, i: int, j: int, DIM: int):
+	def BL(self, i, j, DIM: int):
 		pass
 
 	def _pixel_write(self):
