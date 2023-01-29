@@ -21,7 +21,10 @@ Usage:
 3. 实现`RD(i, j, DIM)`, `GR(i, j, DIM)`, `BL(i, j, DIM)`三个抽象方法, 用于指定生成图在`(i, j)`位置的RGB值, 生成图的尺寸是`DIM*DIM`
 4. 实例化并调用`Gen()`方法, 生成的图像会被保存到`filename`指定的位置
 
+---
+
 Example/示例:
+
 ```python
 from gen import *
 class Demo(TMA):
@@ -42,5 +45,7 @@ if __name__ == '__main__':
 	demo = Demo(r'demo.png')
 	demo.Gen()
 ```
-The generated image of codes above would be:
+The generated image of codes above would be /
+以上代码将会生成如下的图像:
+
 ![Demo image](demo.png)
